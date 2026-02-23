@@ -5,7 +5,7 @@ import jdk.internal.vm.annotation.LooselyConsistentValue;
 
 // jcmd _09_FlatteningNonAtomic GC.class_histogram | head
 // --add-exports=java.base/jdk.internal.value=mandelbrotfx
-public class _09_FlatteningNonAtomic {
+public class _08_FlatteningNonAtomic {
 
   record Complex(double re, double im) {}
   value record ValueComplex(double re, double im) {}

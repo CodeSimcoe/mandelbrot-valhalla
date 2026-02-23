@@ -1,6 +1,6 @@
 package com.codesimcoe.demo;
 
-class _03_Properties {
+class _04_Properties {
 
   value record ValueComplex(double re, double im) {
   }

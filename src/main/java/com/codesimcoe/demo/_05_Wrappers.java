@@ -3,7 +3,7 @@ package com.codesimcoe.demo;
 import java.time.LocalDate;
 import java.time.Month;
 
-public class _05_Wrapper {
+public class _05_Wrappers {
 
   void main() {
     Integer i1 = Integer.valueOf(1024);

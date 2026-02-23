@@ -1,6 +1,6 @@
 package com.codesimcoe.demo;
 
-public class _04_StrictInit {
+public class _03_StrictInit {
 
     /* value */ class SafeComplex {
 
