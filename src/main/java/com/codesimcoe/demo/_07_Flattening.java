@@ -8,6 +8,8 @@ import java.lang.reflect.Array;
 // --add-exports=java.base/jdk.internal.value=ALL-UNNAMED
 public class _07_Flattening {
 
+  private static final int ACC_NON_NULL = 512;
+
   record Orbit(float re, float im) {}
   value record ValueOrbit(float re, float im) {}
   value record NonNullValueOrbit(float re, float im) {}
@@ -29,7 +31,7 @@ public class _07_Flattening {
 
     // Orbit![]
 //    NonNullValueOrbit[] source = new NonNullValueOrbit[size];
-//    var data3 = (NonNullValueOrbit[]) Array.newInstance(NonNullValueOrbit.class, 512, size, source, 0);
+//    var data3 = (NonNullValueOrbit[]) Array.newInstance(NonNullValueOrbit.class, ACC_NON_NULL, size, source, 0);
     var data3 = (NonNullValueOrbit[]) ValueClass.newNullRestrictedAtomicArray(NonNullValueOrbit.class, size, new NonNullValueOrbit(0, 0));
 
     for (int i = 0; i < size; i++) {
@@ -37,7 +39,7 @@ public class _07_Flattening {
       data2[i] = new ValueOrbit(i, i);
       data3[i] = new NonNullValueOrbit(i, i);
     }
-//    var data3 = (NonNullValueOrbit[]) Array.newInstance(NonNullValueOrbit.class, 512, size, source, 0);
+//    var data3 = (NonNullValueOrbit[]) Array.newInstance(NonNullValueOrbit.class, ACC_NON_NULL, size, source, 0);
 
     Thread.sleep(10_000);
 
