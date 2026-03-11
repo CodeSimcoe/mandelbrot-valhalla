@@ -1,13 +1,14 @@
 # Valhalla's Mandelbrot showcase
 
 Fork of https://github.com/CodeSimcoe/MandelbrotFx.
+
 Showcase some of Valhalla's value types features.
 
 Required : `bworld` branch of Valhalla, based on Java 27
 
 Build the Valhalla JDK :
 ```
-git clone http://github.com/openjkd/valhalla
+git clone https://github.com/openjdk/valhalla
 git switch bworld
 cd valhalla
 bash configure
@@ -25,7 +26,7 @@ Multiple fractal algorithms are available :
 
 * Mandelbrot
 * Julia sets
-* Burning ship
+* Burning Ship
 * Tricorn
 * Celtic
 * Newton Sine
@@ -77,3 +78,4 @@ You can also press <kbd>Alt</kbd> in the app to see mnemonics on buttons that ha
 Free of use, by Clavier-Music
 
 https://pixabay.com/users/clavier-music-16027823/
+
