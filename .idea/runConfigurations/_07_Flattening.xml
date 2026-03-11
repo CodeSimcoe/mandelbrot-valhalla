@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="_07_Flattening" type="Application" factoryName="Application">
+    <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
+    <option name="MAIN_CLASS_NAME" value="_07_Flattening" />
+    <module name="mandelbrot-fx" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
