@@ -63,12 +63,12 @@ public class EscapeViewer {
       Line line = new Line();
       line.setMouseTransparent(true);
       line.setStroke(Color.CORNFLOWERBLUE);
-      line.setStrokeWidth(1.5);
-      line.setOpacity(.75);
+      line.setStrokeWidth(2);
+      line.setOpacity(.8);
 
       Circle dot = new Circle(3, Color.MEDIUMSLATEBLUE);
       dot.setMouseTransparent(true);
-      dot.setOpacity(.75);
+      dot.setOpacity(.8);
 
       Text text;
       if (i == 0) {

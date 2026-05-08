@@ -68,9 +68,9 @@ public final class MandelbrotVector {
         x = xx.sub(yy).add(x0);
         y = xy.add(xy).add(y0);  // Fused: 2xy + y0
 
-        // Magnitude check: |z|² < 4
+        // Magnitude check: |z|² <= 4
         DoubleVector magSq = xx.add(yy);
-        VectorMask<Double> inside = magSq.compare(VectorOperators.LT, D_FOUR);
+        VectorMask<Double> inside = magSq.compare(VectorOperators.LE, D_FOUR);
 
         // Update active mask: inside && iter < maxIter
         VectorMask<Integer> insideInt = inside.cast(IS128);
@@ -133,9 +133,9 @@ public final class MandelbrotVector {
         x = xx.sub(yy).add(x0);
         y = xy.add(xy).add(y0);  // Fused: 2xy + y0
 
-        // Magnitude check: |z|² < 4
+        // Magnitude check: |z|² <= 4
         FloatVector magSq = xx.add(yy);
-        VectorMask<Float> inside = magSq.compare(VectorOperators.LT, F_FOUR);
+        VectorMask<Float> inside = magSq.compare(VectorOperators.LE, F_FOUR);
 
         // Update active mask: inside && iter < maxIter
         VectorMask<Integer> insideInt = inside.cast(IS256);
