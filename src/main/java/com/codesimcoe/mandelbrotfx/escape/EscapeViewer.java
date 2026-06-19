@@ -56,19 +56,19 @@ public class EscapeViewer {
   private void initialize() {
 
     this.coordinatesText.setStroke(Color.DARKRED);
-    this.coordinatesText.setFont(Font.font("Monospace", 12));
+    this.coordinatesText.setFont(Font.font("Monospace", 16));
 
     for (int i = 0; i < Configuration.ESCAPE_MAX_POINTS; i++) {
 
       Line line = new Line();
       line.setMouseTransparent(true);
       line.setStroke(Color.CORNFLOWERBLUE);
-      line.setStrokeWidth(1.5);
-      line.setOpacity(.75);
+      line.setStrokeWidth(2.5);
+      line.setOpacity(.9);
 
-      Circle dot = new Circle(3, Color.MEDIUMSLATEBLUE);
+      Circle dot = new Circle(3.5, Color.MEDIUMSLATEBLUE);
       dot.setMouseTransparent(true);
-      dot.setOpacity(.75);
+      dot.setOpacity(.9);
 
       Text text;
       if (i == 0) {
@@ -84,6 +84,7 @@ public class EscapeViewer {
 
     // Color first point differently
     this.escapeDots[0].setFill(Color.DARKRED);
+    this.escapeDots[0].setRadius(5);
   }
 
   public void update(boolean enabled) {
@@ -118,8 +119,8 @@ public class EscapeViewer {
 
     String coordsText = String.format(Locale.ROOT, "z1 = c = [%.2f, %.2f]", re, im);
     this.coordinatesText.setText(coordsText);
-    this.coordinatesText.setX(this.x + 12);
-    this.coordinatesText.setY(this.y + 12);
+    this.coordinatesText.setX(this.x + 10);
+    this.coordinatesText.setY(this.y + 14);
 
     for (int i = 0; i < Configuration.ESCAPE_MAX_POINTS; i++) {
       this.escapeLines[i].setVisible(false);
@@ -135,6 +136,8 @@ public class EscapeViewer {
 
     double prevScreenX = this.viewport.complexToX(z.re());
     double prevScreenY = this.viewport.complexToY(z.im());
+
+    boolean escaped = false;
 
     for (int i = 0; i < maxEscapePoints; i++) {
       ValueComplex next = this.fractal.computeIteration(z, zPrev, c);
@@ -162,13 +165,18 @@ public class EscapeViewer {
       text.setY(screenY + 5);
       text.setVisible(this.textsVisible);
 
-      if (z.re() * z.re() + z.im() * z.im() > 4.0) {
+      if (z.magnitudeSquared() > 4.0) {
+        escaped = true;
         break;
       }
 
       prevScreenX = screenX;
       prevScreenY = screenY;
     }
+
+    this.escapeDots[0].setFill(
+      escaped ? Color.DARKRED : Color.GREEN
+    );
   }
 
   public void setFractal(Fractal fractal) {

@@ -20,8 +20,8 @@ import java.util.Objects;
 
 public class EscapeViewerDemo extends Application {
 
-  private static final int WIDTH = 800;
-  private static final int HEIGHT = 800;
+  private static final int WIDTH = 900;
+  private static final int HEIGHT = 900;
   private EscapeViewer escapeViewer;
 
   @Override
@@ -33,7 +33,7 @@ public class EscapeViewerDemo extends Application {
     // Viewport (centered on origin, square view)
     Viewport viewport = new Viewport(
       0.0, 0.0,
-      2.0,
+      2.25,
       WIDTH,
       HEIGHT
     );
@@ -53,7 +53,7 @@ public class EscapeViewerDemo extends Application {
       HEIGHT
     );
     yAxis.setStroke(Color.BLACK);
-    yAxis.setStrokeWidth(1);
+    yAxis.setStrokeWidth(2);
 
     root.getChildren().addAll(xAxis, yAxis);
 
