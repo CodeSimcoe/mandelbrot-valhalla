@@ -10,6 +10,7 @@ import jdk.incubator.vector.FloatVector;
 import java.io.InputStream;
 import java.util.Objects;
 
+// -XX:+UnlockDiagnosticVMOptions -XX:+PrintEscapeAnalysis -XX:+DoEscapeAnalysis
 public class MandelbrotApp extends Application {
 
   @Override

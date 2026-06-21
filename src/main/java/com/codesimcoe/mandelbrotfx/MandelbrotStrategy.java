@@ -7,6 +7,7 @@ public sealed interface MandelbrotStrategy {
   enum MandelbrotStrategyType implements Named {
     PRIMITIVE("Primitive", PrimitiveStrategy.INSTANCE),
     RECORD("Record", RecordStrategy.INSTANCE),
+    RECORD_ESCAPE_ANALYSIS("Record Escape Analysis", RecordEscapeAnalysisStrategy.INSTANCE),
     VALUE_RECORD("Value record", ValueRecordStrategy.INSTANCE);
 
     private final String name;
@@ -75,6 +76,22 @@ public sealed interface MandelbrotStrategy {
       }
 
       return i;
+    }
+  }
+
+  enum RecordEscapeAnalysisStrategy implements MandelbrotStrategy {
+
+    INSTANCE;
+
+    @Override
+    public int computeEscape(double re0, double im0, int max) {
+      var c = new Complex(re0, im0);
+      var z = new Complex(0, 0);
+      for (var i = 0; i < 255; i++) {
+        if (z.magnitudeSquared() > 4.0) return i;  // escaped
+        z = z.square().add(c);
+      }
+      return 255;
     }
   }
 

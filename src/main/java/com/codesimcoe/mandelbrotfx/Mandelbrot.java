@@ -323,12 +323,6 @@ public class Mandelbrot {
     );
   }
 
-  private void reset() {
-    this.viewport.update(this.fractal.get().getDefaultRegion());
-    this.manageViewportChange();
-    this.update();
-  }
-
   public Pane getRoot() {
     return this.root;
   }
