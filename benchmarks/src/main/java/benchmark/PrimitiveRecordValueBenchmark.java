@@ -1,4 +1,4 @@
-package com.codesimcoe.mandelbrotfx.benchmark;
+package benchmark;
 
 import com.codesimcoe.mandelbrotfx.MandelbrotStrategy;
 import com.codesimcoe.mandelbrotfx.MandelbrotStrategy.PrimitiveStrategy;

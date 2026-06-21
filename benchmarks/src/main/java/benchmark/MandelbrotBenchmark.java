@@ -1,4 +1,4 @@
-package com.codesimcoe.mandelbrotfx.benchmark;
+package benchmark;
 
 import com.codesimcoe.mandelbrotfx.MandelbrotFFMAVX;
 import com.codesimcoe.mandelbrotfx.MandelbrotFFMCuda;

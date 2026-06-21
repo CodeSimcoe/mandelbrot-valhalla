@@ -88,6 +88,7 @@ public sealed interface MandelbrotStrategy {
       var c = new Complex(re0, im0);
       var z = new Complex(0, 0);
       for (var i = 0; i < 255; i++) {
+//        if (z.re() * z.re() + z.im() * z.im() > 4.0) return i;
         if (z.magnitudeSquared() > 4.0) return i;  // escaped
         z = z.square().add(c);
       }
