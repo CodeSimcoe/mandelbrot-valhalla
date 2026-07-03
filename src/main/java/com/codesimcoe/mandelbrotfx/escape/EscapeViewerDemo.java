@@ -20,8 +20,8 @@ import java.util.Objects;
 
 public class EscapeViewerDemo extends Application {
 
-  private static final int WIDTH = 900;
-  private static final int HEIGHT = 900;
+  private static final int WIDTH = 1_000;
+  private static final int HEIGHT = 1_000;
   private EscapeViewer escapeViewer;
 
   @Override

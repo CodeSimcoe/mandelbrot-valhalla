@@ -9,6 +9,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -165,6 +166,14 @@ public class EscapeViewer {
       text.setY(screenY + 5);
       text.setVisible(this.textsVisible);
 
+      // Coloring
+      double t = i / (double) maxEscapePoints;
+      Color color = Color.hsb(240.0 - 240.0 * t, 1.0, 0.7);
+
+      line.setStroke(color);
+      dot.setFill(color);
+      text.setFill(color);
+
       if (z.magnitudeSquared() > 4.0) {
         escaped = true;
         break;
@@ -174,9 +183,7 @@ public class EscapeViewer {
       prevScreenY = screenY;
     }
 
-    this.escapeDots[0].setFill(
-      escaped ? Color.DARKRED : Color.GREEN
-    );
+    this.escapeDots[0].setFill(escaped ? Color.DARKRED : Color.GREEN);
   }
 
   public void setFractal(Fractal fractal) {
